@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.header .status-bar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.status-badge.active {
+  background: rgba(76, 175, 80, 0.2);
+  color: #c8e6c9;
+}
+
+.status-badge.expired {
+  background: rgba(244, 67, 54, 0.2);
+  color: #ffcdd2;
+}
+
+.status-badge.none {
+  background: rgba(255, 152, 0, 0.2);
+  color: #ffe0b2;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.active { background: #4caf50; }
+.status-dot.expired { background: #f44336; }
+.status-dot.none { background: #ff9800; }
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #5568d3;
+}
+
+.btn-secondary {
+  background: white;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+  background: #f0f0f0;
+}
+
+.sort-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.sort-tab {
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  background: white;
+  border: 1px solid #ddd;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.sort-tab.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 16px;
+}
+
+.post-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s;
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.post-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.post-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-card h3 a:hover {
+  color: #667eea;
+}
+
+.post-summary {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-stats {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: #888;
+}
+
+.post-stats span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.post-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.post-tag {
+  font-size: 12px;
+  padding: 2px 8px;
+  background: #f0f0f5;
+  border-radius: 4px;
+  color: #667eea;
+}
+
+.post-date {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.pagination button {
+  padding: 6px 14px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination button.current {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.alert {
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.alert-warning {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  color: #856404;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+}
